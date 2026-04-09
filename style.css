@@ -79,7 +79,7 @@ nav ul li a:hover { color: var(--accent-color); }
 .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 .product-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: white; transition: 0.3s; display: flex; flex-direction: column; }
 .product-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
-.product-img { width: 100%; height: 150px; object-fit: cover; background: #eee; }
+.product-img { width: 100%; height: 180px; object-fit: contain; background: #f9f9f9; padding: 15px; display: block; }
 .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
 .product-title { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary-color); }
 .product-desc { font-size: 0.9rem; color: #666; margin-bottom: 15px; flex-grow: 1; }
