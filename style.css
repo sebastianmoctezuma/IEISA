@@ -1,0 +1,271 @@
+/* VARIABLES DE COLOR */
+:root {
+    --primary-color: #003366; /* Azul Oscuro Industrial */
+    --secondary-color: #0056b3; 
+    --accent-color: #f39c12;    /* Naranja/Dorado */
+    --text-color: #333;
+    --light-bg: #f4f4f4;
+    --dark-bg: #1a1a1a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+html { scroll-behavior: smooth; } /* Desplazamiento suave al dar click en menu */
+
+body { color: var(--text-color); line-height: 1.6; }
+
+.container { width: 90%; max-width: 1200px; margin: auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-color); }
+.section-subtitle { text-align: center; margin-bottom: 50px; color: #666; }
+.bg-light { background-color: var(--light-bg); }
+.bg-dark { background-color: var(--dark-bg); color: white; }
+.white { color: white; }
+
+/* TEXTO DE CONTENIDO (Para Compliance y Anticorrupcion) */
+.text-content { max-width: 800px; margin: 0 auto; text-align: justify; font-size: 1.1rem; }
+.text-content p { margin-bottom: 20px; }
+
+/* BOTONES */
+.btn-primary {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none; cursor: pointer;
+}
+.btn-primary:hover { background: #e67e22; }
+
+/* HEADER */
+header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+.logo { font-size: 2.4rem; font-weight: bold; color: var(--primary-color); letter-spacing: 1px; text-decoration: underline; text-underline-offset: 5px; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 0.95rem; }
+nav ul li a:hover { color: var(--accent-color); }
+.btn-highlight { color: var(--secondary-color) !important; font-weight: bold; }
+
+/* HERO */
+.hero {
+    height: 85vh;
+    background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+/* ABOUT & GRID */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.about-img img { width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* SERVICIOS */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.service-card { background: white; padding: 30px; text-align: center; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+.service-card:hover { transform: translateY(-5px); }
+.service-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+
+/* CATALOGO PRODUCTOS */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.product-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: white; transition: 0.3s; display: flex; flex-direction: column; }
+.product-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+.product-img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+.product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.product-title { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary-color); }
+.product-desc { font-size: 0.9rem; color: #666; margin-bottom: 15px; flex-grow: 1; }
+.product-price { font-size: 1.3rem; font-weight: bold; color: #333; margin-bottom: 15px; display: block; }
+/* Botón Comprar General */
+.btn-buy { 
+    display: block; 
+    width: 100%; 
+    padding: 12px; 
+    text-align: center; 
+    background: var(--accent-color); 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.btn-buy:hover { background: #d35400; }
+
+/* CONTACTO */
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+footer { background: #111; color: #aaa; text-align: center; padding: 20px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; height: auto; padding: 15px; }
+    nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+    nav ul li { margin: 5px 10px; }
+    .hero h1 { font-size: 2rem; }
+    .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+}
+
+/* --- ESTILOS DE CATEGORIAS --- */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-filter {
+    padding: 8px 20px;
+    border: 2px solid var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+    border-radius: 50px; /* Bordes redondos */
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.btn-filter.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   ESTILOS DEL CHATBOT IEISA (PEGAR AL FINAL)
+   ========================================= */
+
+/* 1. Botón flotante redondo */
+.chat-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-color); /* Usa tu color naranja */
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.chat-toggle-btn:hover { transform: scale(1.1); }
+
+.notification-badge {
+    position: absolute;
+    top: 0; right: 0;
+    background: red; color: white;
+    font-size: 12px; width: 22px; height: 22px;
+    border-radius: 50%; border: 2px solid white;
+    font-weight: bold; display: flex; align-items: center; justify-content: center;
+}
+
+/* 2. Ventana del Chat Principal */
+.chat-widget {
+    position: fixed;
+    bottom: 110px; right: 30px;
+    width: 360px; height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    display: none; /* Oculto al inicio */
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    animation: slideUp 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Cabecera Azul */
+.chat-header {
+    background: var(--primary-color);
+    color: white; padding: 15px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+}
+.chat-title { display: flex; align-items: center; gap: 10px; font-weight: bold; }
+.status-dot { width: 10px; height: 10px; background: #2ecc71; border-radius: 50%; display: block; box-shadow: 0 0 5px #2ecc71; }
+
+/* Cuerpo de mensajes */
+.chat-messages {
+    flex-grow: 1; padding: 20px;
+    overflow-y: auto; background: #f4f7f6;
+    display: flex; flex-direction: column; gap: 12px;
+}
+
+/* Burbujas de texto */
+.message { padding: 12px 16px; border-radius: 15px; max-width: 85%; font-size: 0.95rem; line-height: 1.4; word-wrap: break-word; }
+.bot-message { background: white; color: #333; align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #e0e0e0; }
+.user-message { background: var(--secondary-color); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+
+/* Botones de opciones (Chips) */
+.chat-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
+.chat-options button {
+    background: white; border: 1px solid var(--primary-color); color: var(--primary-color);
+    padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+}
+.chat-options button:hover { background: var(--primary-color); color: white; }
+
+/* Tarjetas de Producto DENTRO del chat */
+.chat-product-card {
+    background: white; border: 1px solid #eee; padding: 10px; border-radius: 8px;
+    display: flex; gap: 10px; align-items: center; margin-top: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.chat-product-img { width: 50px; height: 50px; object-fit: cover; border-radius: 5px; }
+.chat-product-info div { font-size: 0.9rem; font-weight: bold; line-height: 1.2; margin-bottom: 2px;}
+.chat-product-price { color: var(--accent-color); font-size: 0.85rem; display: block; margin-bottom: 5px;}
+.chat-whatsapp-link {
+    background: #25d366; color: white; text-decoration: none; font-size: 0.75rem;
+    padding: 3px 8px; border-radius: 4px; display: inline-block; font-weight: bold;
+}
+
+/* Input Area */
+.chat-input-area { padding: 12px; background: white; border-top: 1px solid #eee; display: flex; gap: 8px; }
+.chat-input-area input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 25px; outline: none; }
+.chat-input-area button { background: var(--secondary-color); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;}
+
+/* Responsive Celular */
+@media (max-width: 480px) {
+    .chat-widget { width: 90%; right: 5%; bottom: 100px; height: 65vh; }
+}
+
+/* =========================================
+   AJUSTE DE TAMAÑO PARA SERVICIOS 
+   ========================================= */
+
+/* Hace que los íconos nuevos sean grandes */
+.service-card i {
+    font-size: 60px; /* Cambia este 60 si los quieres más o menos grandes */
+    color: var(--primary-color); /* Usa el azul de tu marca */
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Si tus 3 primeros servicios usan imágenes, esto las empareja */
+.service-card img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
